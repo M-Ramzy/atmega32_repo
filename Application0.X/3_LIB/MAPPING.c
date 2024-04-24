@@ -1,0 +1,18 @@
+/* 
+ * File:   MAPPING.h
+ * Author: Mohamed Ramzy
+ * https://www.linkedin.com/in/mohamed-ramzy-8436b4231/
+ * Created on March 13, 2024, 3:04 PM
+ */
+
+/* Section : Includes */
+#include "../3_LIB/STD_TYPES.h"
+#include "../3_LIB/BIT_MATH.h"
+#include "MAPPING.h"
+
+u32 MAPPING_u32GetOutput (MAPPING_CONFIG * mapping_config)
+{
+	u32 Local_u32OutputValue ;
+	Local_u32OutputValue = ((((mapping_config->Copy_u32InputValue - mapping_config->Copy_u32InputMin) * (mapping_config->Copy_u32OutputMax - mapping_config->Copy_u32OutputMin)) / (mapping_config->Copy_u32InputMax - mapping_config->Copy_u32InputMin)) + mapping_config->Copy_u32OutputMin) ;
+	return Local_u32OutputValue  ;
+}
